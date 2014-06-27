@@ -158,6 +158,8 @@ public class MainActivity extends Activity {
     private void initilizeMap(){
     	if(googleMap == null){
     		googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+    		googleMap.setMyLocationEnabled(true);
+    		googleMap.getUiSettings().setMyLocationButtonEnabled(true);
     		
     		if(googleMap == null){
     			Toast.makeText(getApplicationContext(), "Sorry! unable to create maps", Toast.LENGTH_SHORT).show();
