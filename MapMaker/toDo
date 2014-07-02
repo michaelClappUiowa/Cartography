@@ -1,4 +1,6 @@
 Gui to add csv or other smart way to add load file
-Markers
+ should be able to handle null values in csvs (when csvs  have blank spaces)
+Markers made (make spiffy?)
 Personal location-- working but not very fast.
+Handle Google timeouts?
 Navigation
