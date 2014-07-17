@@ -2,6 +2,7 @@ package com.example.mapmaker;
 
 import android.location.Address;
 
+
 /**
  * @author Julio 
  *
@@ -17,11 +18,12 @@ public class Client {
 	private String zip;
 	private String phone;
 	private String dateSold;
-	
+	private String latitude;
+	private String longitude;
 	
 	
 	/**
-	 * returns filled client object, geoAddress not included
+	 * doesn't fill latitude,longitude or geoAddress, represents
 	 * @param customerName
 	 * @param address
 	 * @param city
@@ -40,6 +42,17 @@ public class Client {
 		this.dateSold = dateSold;
 	}
 
+	public Client(String customerName, String address, String city, String zip,
+			String phone, String dateSold, String latitude, String longitude){
+		this.customerName = customerName;
+		this.address = address;
+		this.city = city;
+		this.zip = zip;
+		this.phone = phone;
+		this.dateSold = dateSold;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
 	/**
 	 * default constructor, returns empty client object
 	 */
@@ -162,6 +175,34 @@ public class Client {
 	 */
 	public void setGeoAddress(Address geoAddress) {
 		this.geoAddress = geoAddress;
+	}
+
+	/**
+	 * @return the latitude
+	 */
+	public String getLatitude() {
+		return latitude;
+	}
+
+	/**
+	 * @param latitude the latitude to set
+	 */
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	/**
+	 * @return the longitude
+	 */
+	public String getLongitude() {
+		return longitude;
+	}
+
+	/**
+	 * @param longitude the longitude to set
+	 */
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 	
 	

@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 
+
 public class MainActivity extends Activity {
 	
     //private GoogleMap googleMap;
@@ -26,6 +27,7 @@ public class MainActivity extends Activity {
     	mapHandler = new MapHandler(this);
     	try{
     		mapHandler.initializeMap();
+    		
     	}catch(Exception e){
     		e.printStackTrace();
     	}
@@ -107,6 +109,11 @@ public class MainActivity extends Activity {
     protected void onResume(){
     	super.onResume();
     	//
-    	mapHandler.initializeMap();
+    	try {
+			mapHandler.initializeMap();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

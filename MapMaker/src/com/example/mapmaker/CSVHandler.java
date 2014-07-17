@@ -10,6 +10,7 @@ import java.util.List;
 
 import android.os.Environment;
 
+
 public class CSVHandler {
 	
     public static boolean isExternalStorageReadable() {
@@ -22,9 +23,8 @@ public class CSVHandler {
     }
     
     public static boolean fileExists() {
-        // Create a path where we will place our picture in the user's
-        // public pictures directory and check if the file exists.  If
-        // external storage is not currently mounted this will think the
+    	// checks to see if file exists
+        // If external storage is not currently mounted this will think the
         // picture doesn't exist.
         File path = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_DOWNLOADS);
@@ -32,6 +32,11 @@ public class CSVHandler {
         File file = new File(path, Q.FILE_NAME);
         return file.exists();
     }
+    
+    /**
+     * reads the csv and creates a list of clients
+     * @return a list of client objects representing the given csv
+     */
 	   public static List<Client> getClients(){
 	    	BufferedReader in = null;
 	    	try{
